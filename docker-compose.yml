@@ -1,0 +1,20 @@
+﻿services:
+  bloggingsystem:
+    image: bloggingsystem
+    build:
+      context: .
+      dockerfile: BloggingSystem/Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=Pass@Fyyjnfwbz
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=./bloggingsystem.pfx
+    ports:
+      - "29118:80"
+      - "44366:443"
+  sqlite3:
+    image: keinos/sqlite3:latest
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./db/:/root/db/

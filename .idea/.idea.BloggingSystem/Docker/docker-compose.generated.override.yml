@@ -1,0 +1,19 @@
+# This is a generated file. Not intended for manual editing.
+services:
+  bloggingsystem:
+    build:
+      context: "E:\\bin\\Programs\\C#\\BloggingSystem"
+      dockerfile: "BloggingSystem/Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net7.0/BloggingSystem.dll"
+    environment: {}
+    image: "bloggingsystem:dev"
+    ports: []
+    volumes:
+    - "C:\\Users\\Dima\\AppData\\Roaming\\ASP.NET\\Https:/root/.aspnet/https"
+    - "C:\\Users\\Dima\\AppData\\Roaming\\Microsoft\\UserSecrets:/root/.microsoft/usersecrets"
+    - "E:\\bin\\Programs\\C#\\BloggingSystem\\BloggingSystem:/app:rw"
+    working_dir: "/app"
